@@ -12,7 +12,7 @@ public class Question {
         this.questionAnswer = questionAnswer;
     }
 
-    public String getDescription() {
+    public String getQuestion() {
         return this.questionDescription;
     }
 

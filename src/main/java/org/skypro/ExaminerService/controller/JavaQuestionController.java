@@ -18,12 +18,6 @@ public class JavaQuestionController {
         this.questionService = questionService;
     }
 
-
-    @GetMapping
-    public Collection<Question> allQuestions() {
-        return questionService.getAll();
-    }
-
     @GetMapping("/add")
     public String add(@RequestParam String questionText, @RequestParam String answer) {
         questionService.addQuestion(questionText, answer);
@@ -34,5 +28,10 @@ public class JavaQuestionController {
     public String remove(@RequestParam String questionText, @RequestParam String answer) {
         questionService.removeQuestion(questionText, answer);
         return "Вопрос удалён";
+    }
+
+    @GetMapping(path = "/java")
+    public Collection<Question> getAll() {
+        return questionService.getAll();
     }
 }
